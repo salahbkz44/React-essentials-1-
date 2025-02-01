@@ -1,21 +1,15 @@
-import { useState } from "react";
 import { CORE_CONCEPTS } from "../data";
 import CoreConcept from "./CoreConcept";
+import Section from "./Section";
 
 export default function CoreConcepts() {
-  const [selectedTopic, setSelectedTopic] = useState();
-
-  function handleSelect(selectedButton) {
-    setSelectedTopic(selectedButton);
-  }
   return (
-    <section id="core-concepts">
-      <h2>Core Concepts</h2>
+    <Section title="Core Concepts" id="core-concepts">
       <ul>
         {CORE_CONCEPTS.map((concept) => {
           return <CoreConcept key={concept.title} {...concept} />;
         })}
       </ul>
-    </section>
+    </Section>
   );
 }
